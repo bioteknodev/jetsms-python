@@ -1,0 +1,5 @@
+.env
+trials
+*.pyc
+.vscode
+send_test.py
