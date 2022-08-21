@@ -1,8 +1,8 @@
 import os
-from client.response import SmsResponse
+from client.SmsResponse import SmsResponse
 import urllib2
 
-class JetSmsMulti:
+class SmsMulti:
 
 	def __init__(self, username, password):
 		self.username = username

@@ -8,14 +8,14 @@ ORIGINATOR= JetSMS customer approved originator
 
 ```python
 import os
-from client.jetsms import JetSmsSingle
+from client.SmsSingle import SmsSingle
 
 # predefined  JetSms Api url
 # JETSMS_URL="https://service.jetsms.com.tr/SMS-Web8/xmlsms"
 
 def sendSingleTest():
 	print("Send Single Test")
-	jetSmsApiSingle = JetSmsSingle("USERNAME","PASSWORD")
+	jetSmsApiSingle = SmsSingle("USERNAME","PASSWORD")
 	jetSmsApiSingle.addMessage(gsm="5420000001",text="hello world!")
 	smsResult = jetSmsApiSingle.send(title="ORIGINATOR")
 	if smsResult.isSend():
@@ -31,16 +31,16 @@ if __name__ == '__main__':
 
 ```python
 import os
-from client.multiple import JetSmsMulti
-from client.sms import JetSmsSMS
+from client.SmsMulti import SmsMulti
+from client.SmsMessage import SmsMessage
 
 # predefined  JetSms Api url
 # JETSMS_URL="https://service.jetsms.com.tr/SMS-Web8/xmlsms"
 
 def sendMultipleTest():
-	jetSmsApiMulti = JetSmsMulti("USERNAME","PASSWORD")
-	jetSmsApiMulti.addMessage(sms=JetSmsSMS(gsm='5420000001',text='hello 001'))
-	jetSmsApiMulti.addMessage(sms=JetSmsSMS(gsm='5420000002',text='hello 002'))
+	jetSmsApiMulti = SmsMulti("USERNAME","PASSWORD")
+	jetSmsApiMulti.addMessage(sms=SmsMessage(gsm='5420000001',text='hello 001'))
+	jetSmsApiMulti.addMessage(sms=SmsMessage(gsm='5420000002',text='hello 002'))
 	smsResult = jetSmsApiMulti.send(title="ORIGINATOR")
 	if smsResult.isSend():
 		print('sms send')
