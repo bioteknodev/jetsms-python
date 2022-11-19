@@ -1,8 +1,11 @@
 # JetSMS
 
 USERNAME= JetSMS customer user username
+
 PASSWORD= JetSMS customer user password
+
 ORIGINATOR= JetSMS customer approved originator
+
 
 ## Single Sms (1-1) send
 
